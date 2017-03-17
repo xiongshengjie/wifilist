@@ -12,11 +12,12 @@ public class WifiDao {
 
 	//添加wifi记录
 	public int addWifi(shop realshop,List<wifilist> realwifilist,String uid) throws SQLException{
-		String sql = "insert into shop(id,shopname,imageurl,buildingname,floor,shoplogitude,shoplatitude,accuracy,username) values(?,?,?,?,?,?,?,?,?)";
+		String sql = "insert into shop(id,shopname,imageurl,buildingname,floor,shoplogitude,shoplatitude,accuracy,shopwifi,category1,category2,username) values(?,?,?,?,?,?,?,?,?,?,?,?)";
 		QueryRunner runner = new QueryRunner(DataSourceUtils.getDataSource());
 		int correct = 0;
 		int cou = runner.update(sql,uid, realshop.getShopname(), realshop.getImageurl(), realshop.getBuildingname(),
-				realshop.getFloor(),realshop.getShoplogitude(),realshop.getShoplatitude(),realshop.getAccuracy(),realshop.getUsername());
+				realshop.getFloor(),realshop.getShoplogitude(),realshop.getShoplatitude(),realshop.getAccuracy(),
+				realshop.getShopwifi(),realshop.getCategory1(),realshop.getCategory2(),realshop.getUsername());
 
 		if(cou > 0){
 			sql = "insert into wifilist(id,place,ssid,wifilevel) values(?,?,?,?)";

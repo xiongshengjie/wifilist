@@ -41,7 +41,8 @@
 								<td align="center" width="21%">用户名</td>
 								<td align="center" width="21%">采集店铺数</td>
 								<td align="center" width="21%">采集wifi个数</td>
-								<td align="center" width="21%">重置密码</td>
+								<td align="center" width="21%">编辑用户</td>
+								<td align="center" width="21%">删除用户</td>
 							</tr>
 
 							<c:forEach items="${ps}" var="p">
@@ -56,7 +57,14 @@
 									<td style="CURSOR: hand; HEIGHT: 22px" align="center"
 										width="18%">${p.wificount }</td>
 									<td align="center" style="HEIGHT: 22px" width="7%"><a
-										href="${pageContext.request.contextPath}/resetPassword?id=${p.id}">
+										href="${pageContext.request.contextPath}/findProductById?id=${p.id}">
+											<img
+											src="${pageContext.request.contextPath}/admin/images/i_edit.gif"
+											width="16" height="16" border="0" style="CURSOR: hand">
+									</a>
+									</td>
+									<td align="center" style="HEIGHT: 22px" width="7%"><a
+										href="${pageContext.request.contextPath}/deleteProduct?id=${p.id}">
 											<img
 											src="${pageContext.request.contextPath}/admin/images/i_del.gif"
 											width="16" height="16" border="0" style="CURSOR: hand">

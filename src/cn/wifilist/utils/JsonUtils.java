@@ -121,5 +121,15 @@ public class JsonUtils {
                return list;  
 
            }
+    
+    /***
+     * 将List对象序列化为JSON文本
+     */
+    public static <T> String toJSONString(List<T> list)
+    {
+        JSONArray jsonArray = JSONArray.fromObject(list);
+
+        return jsonArray.toString();
+    }
 
 }

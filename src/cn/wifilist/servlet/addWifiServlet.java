@@ -153,6 +153,9 @@ public class addWifiServlet extends HttpServlet {
 			realshop.setFloor(Integer.parseInt(shopmap.get("floor")));
 			realshop.setImageurl(map.get("imgurl"));
 			realshop.setAccuracy(shopmap.get("accuracy"));
+			realshop.setShopwifi(shopmap.get("wifi"));
+			realshop.setCategory1(shopmap.get("category1"));
+			realshop.setCategory2(shopmap.get("category2"));
 			realshop.setUsername(username);
 			
 			List<Map<String,String>> wifiMap = new ArrayList<Map<String,String>>();
